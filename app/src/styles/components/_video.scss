@@ -1,0 +1,289 @@
+.one-film {
+  padding-top: 40px;
+  padding-bottom: 80px;
+  background: linear-gradient(90deg, #DEF7FF 0%, #F4FCFF 45.64%, rgba(255, 255, 255, 0) 100.72%);
+  position: relative;
+
+  &__img {
+    max-width: 100%;
+    margin-bottom: 50px;
+    width: 460px;
+  }
+
+  &__text {
+    max-width: 560px;
+    text-align: justify;
+    color: black;
+    font-size: 18px;
+    line-height: 27px;
+    font-family: $robo;
+    margin-bottom: 55px;
+  }
+
+  &__video-block {
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    max-width: 100%;
+    right: 0;
+    top: 0;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+
+    &.active {
+      z-index: 2;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(10px);
+      position: fixed;
+      justify-content: space-between;
+
+      .controls {
+        display: block;
+      }
+
+      & video {
+        height: auto;
+        flex-grow: 1;
+      }
+
+      & button {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__close {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    opacity: 0;
+    transition: 0.5s;
+    cursor: pointer;
+    z-index: 2;
+
+    &::after {
+      content: "\f057";
+    }
+  }
+
+  &__bg {
+    height: 100%;
+    max-width: 100%;
+  }
+}
+
+.controls {
+  min-height: 10%;
+  background: rgb(15, 15, 15);
+  padding: 15px;
+  display: none;
+
+  &__top {
+    display: flex;
+    align-items: center;
+  }
+
+  &__time {
+    font-size: 18px;
+    color: $orange;
+    font-family: $com;
+    width: 65px;
+    text-align: center;
+  }
+
+  &__line {
+    margin-right: 5px;
+    margin-left: 5px;
+    flex-grow: 1;
+    background: white;
+    height: 2px;
+    display: flex;
+  }
+
+  &__progress {
+    height: 100%;
+    width: 50%;
+    background: linear-gradient(to right, gray 80%, $orange);
+
+    &-ruler {
+      height: 2px;
+      width: 2px;
+      border-radius: 50%;
+      margin-left: -1px;
+      background: white;
+      border: none;
+      outline: none;
+      transform: scale(5);
+      transition: 0.2s;
+      cursor: grab;
+
+      &:active {
+        cursor: grabbing;
+      }
+
+      &:hover {
+        transform: scale(10);
+      }
+    }
+  }
+
+  &__bottom {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__play {
+    font-size: 32px;
+    color: white;
+    margin-right: 10px;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    &.paused {
+      &::before {
+        opacity: 0;
+      }
+
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    &::before {
+      content: '\f04b';
+      transition: 0.5s;
+    }
+
+    &::after {
+      content: '\f04c';
+      opacity: 0;
+      transition: 0.5s;
+    }
+  }
+  
+  &__stop{
+    font-size: 22px;
+    color: white;
+    margin-right: 10px;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    
+    &::before{
+      content: '\f04d';
+    }
+  }
+
+  &__speed {
+    font-size: 18px;
+    font-family: $com;
+    color: white;
+    &-up,
+    &-down {
+      font-size: 28px;
+      color: white;
+      margin-right: 10px;
+      background: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
+    &-down::before{
+      content: '\f04a';
+    }
+    &-up::before{
+      content: '\f04e';
+    }
+  }
+  
+  &__volume{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    
+    &-icon{
+      font-size: 28px;
+      color: white;
+      margin-right: 10px;
+      background: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      
+      &.up::before{
+        content: '\f028';
+      }
+      &.slash::before{
+        content: '\f2e2';
+      }
+      &.down::before{
+        content: '\f027';
+      }
+      &.normal::before{
+        content: '\f6a8';
+      }
+      &.off::before{
+        content: '\f026';
+      }
+      &.mute::before{
+        content: '\f6a9';
+      }
+    }
+    
+    &-line{
+      width: 100px;
+      height: 2px;
+      background: white;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+    &-progress{
+      height: 100%;
+      width: 100%;
+      background: $orange;
+    }
+    &-ruler{
+      background: white;
+      border-radius: 50%;
+      height: 2px;
+      width: 2px;
+      transform: scale(5);
+      outline: none;
+      border: none;
+      cursor: grab;
+      
+      &:active{
+        cursor: grabbing;
+      }
+    }
+  }
+}
+
+@media(orientation: landscape) and (max-width: #{$lg}px){
+  .controls{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    z-index: -1;
+    opacity: 0;
+    transition: 0.5s;
+    
+    &.show{
+      z-index: 1;
+      opacity: 1;
+    }
+  }
+}

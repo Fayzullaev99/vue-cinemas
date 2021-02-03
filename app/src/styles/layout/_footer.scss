@@ -1,0 +1,37 @@
+.footer{
+  background: linear-gradient(90deg, #FF8C30 0%, #9F4700 100%);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
+  padding-top: 24px;
+  padding-bottom: 24px;
+  
+  &__content{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    @include media($md){
+      justify-content: space-between;
+    }
+  }
+  
+  &__link{
+    margin-right: 50px;
+    @include media($md){
+      margin-right: 0;;
+    }
+  }
+  
+  &__text{
+    margin-left: auto;
+    font-family: $com;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 20px;
+    color: white;
+    @include media($md){
+      width: 100%;
+      margin-top: 15px;
+      text-align: center;
+    }
+  }
+}
+

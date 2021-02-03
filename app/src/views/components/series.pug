@@ -1,0 +1,14 @@
+section.series
+  .container
+    h2.section-title Series
+    .series__catalog
+      .series__item
+        img(src="images/series_1.webp", alt="Game of Thrones").series__bg
+        h3.series__title Game of Thrones
+        p.series__text The time of prosperity is drawing to a close, and the summer, which lasted almost a decade, is dying away. Around the center of power of the Seven Kingdoms, the Iron Throne, a conspiracy is ripening, and during this difficult time, the king decides to seek support from his youth friend Eddard Stark. In a world where everyone - from the king to the mercenary - is eager for power, intrigues and is ready to stick a knife in the back, there is ...
+        a(href="#!").button Watch now
+      each item in [{num:2, name: 'Wanda Vision'},{num:3, name: 'The Flash'},{num:4, name: 'The Great'},{num:5, name: 'GOTHAM'},{num:6, name: 'The witcher'}]
+        .series__item
+          img(src="images/series_" + item.num + ".webp", alt=item.name).series__bg
+          i.fad.play-icon
+          h4.series__name= item.name

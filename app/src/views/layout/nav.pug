@@ -1,0 +1,14 @@
+nav.top-nav
+  .container.top-nav__content
+    .logo
+      img(src="images/logo.webp", alt="Vue Cinemas").logo__img
+      span.logo__text CINEMAS
+    button.top-nav__btn
+      span.top-nav__btn-line
+      span.top-nav__btn-line
+      span.top-nav__btn-line
+    ul.top-nav__list
+      button.fal.top-nav__close
+      each link in ['Films', 'Serials', 'Cartoons', 'Collections']
+        li
+          a(href="#!").top-nav__link= link

@@ -1,0 +1,9 @@
+section.collections
+  .container
+    h2.section-title Collections
+    .collections__catalog
+      each item in [{num:1,title:'All Marvel Films'},{num:2,title:'Fast and the Furious'},{num:3,title:'Star Wars'}]
+        .collections__item
+          img(src="images/collections_" + item.num + ".webp", alt=item.title).collections__bg
+          i.play-icon.fad
+          h3.collections__title= item.title

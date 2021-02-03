@@ -1,0 +1,26 @@
+section.one-film
+  .one-film__video-block
+    button.one-film__close.far
+    video(src="video/1.mp4").one-film__bg
+    .controls
+      .controls__top
+        output.controls__time#current 0:00:00
+        .controls__line
+          .controls__progress
+          button.controls__progress-ruler
+        output.controls__time#duration 0:00:00
+      .controls__bottom
+        button.controls__play.fad
+        button.controls__stop.fas
+        button.controls__speed-down.fas
+        button.controls__speed-up.fas
+        output.controls__speed 1x
+        .controls__volume
+          button.controls__volume-icon.fas.up
+          .controls__volume-line
+            .controls__volume-progress
+            button.controls__volume-ruler
+  .container.one-film__content
+    img(src="images/black_widow.webp", alt="Black Widow").one-film__img
+    p.one-film__text After the events at the Leipzig-Halle airport, Natasha was overtaken by the mistakes of the past. The Red Room again made itself felt - a program to create Widows - professional killers and spies - just like her. Natasha decides once and for all to deal with people whose efforts she herself became a Widow.
+    a(href="#!").button#play Watch now

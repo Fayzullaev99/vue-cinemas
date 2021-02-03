@@ -1,0 +1,47 @@
+.intro {
+  min-height: 640px;
+  position: relative;
+  background: rgba(7, 15, 25, 0.75);
+  display: flex;
+  flex-direction: column;
+  &__bg {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: -1;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+  }
+  
+  &__title{
+    font-family: $mont;
+    font-size: 64px;
+    color: white;
+    margin-bottom: 25px;
+  }
+  
+  &__text{
+    max-width: 570px;
+    width: 100%;
+    margin-bottom: 50px;
+    color: #C8C8C8;
+    font-family: $mont;
+    line-height: 24px;
+    text-align: justify;
+  }
+  
+  &__buttons{
+    display: flex;
+    flex-wrap: wrap;
+    @include media($sm){
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

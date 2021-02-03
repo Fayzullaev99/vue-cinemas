@@ -1,0 +1,71 @@
+.films {
+  padding-top: 60px;
+  padding-bottom: 70px;
+
+  &__catalog {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(380px, max-content);
+    grid-gap: 30px;
+    
+    @include media($lg){
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @include media($sm){
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    position: relative;
+    background: linear-gradient(180deg, rgba(241, 129, 40, 0.35) 0%, rgba(0, 0, 0, 0.71) 51.04%, rgba(7, 15, 25, 0.8) 100%);
+    border-radius: 6px;
+    padding: 55px 15px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+
+  &__time {
+    width: 100px;
+    height: 25px;
+    border-radius: 9px;
+    background: rgba(7, 15, 25, 0.2);
+    border: 1px white solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $mont;
+    font-size: 14px;
+    color: white;
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    font-family: $mont;
+    margin-bottom: 13px;
+    font-size: 22px;
+    color: white;
+    font-weight: normal;
+  }
+
+  &__text {
+    font-family: $robo;
+    font-size: 14px;
+    line-height: 21px;
+    color: white;
+  }
+}
